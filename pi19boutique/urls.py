@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from core.viewa import paginainicial, cadastro, login, usuario
 
 urlpatterns = [
+	path(' ', paginainicial, name="paginainicial"),
+	path('cadastro/', cadastro, name="cadastro"),
+	path('login/', login, name="login"),
+	path('usuario/', usuario, name="usuario"),
     path('admin/', admin.site.urls),
 ]
