@@ -7,7 +7,8 @@ from .forms import TipoForm, ProdutoForm
 def paginainicial(request):
 	return render( request, 'paginainicial.html')
 
-@login_required
+
+#@login_required
 
 def cadastro(request):
 	form = UserCreationForm(request.POST or None)
