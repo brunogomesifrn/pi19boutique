@@ -1,13 +1,30 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from .models import Tipo, Produto
+from .forms import TipoForm, ProdutoForm
 
 def paginainicial(request):
-	return render('paginainicial.html')
+	return render( request, 'paginainicial.html')
+
+@login_required
 
 def cadastro(request):
-	return render('cadastro.html')
+	form = UserCreationForm(request.POST or None)
 
-def login(request):
-	return render('login.html')
+	if form.is_valid():
+		form.save()
+		return redirect('usuario')
+
+	contexto = {
+		'form': form
+	}
+	return render(request, 'cadastro.html', contexto)
 
 def usuario(request):
-	return render('usuario.html')
+	lista = Produto.objects.all()
+
+	contexto = {
+	'lista_Produto': lista
+	}
+	return render(request, 'usuario.html', contexto)
