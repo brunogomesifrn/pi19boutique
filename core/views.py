@@ -4,11 +4,20 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Tipo, Produto
 from .forms import TipoForm, ProdutoForm
 
+
+
 def paginainicial(request):
 	return render( request, 'paginainicial.html')
 
+@login_required
 
-#@login_required
+def usuario(request):
+	lista = Produto.objects.all()
+
+	contexto = {
+	'lista_Produto': lista
+	}
+	return render(request, 'usuario.html', contexto)
 
 def cadastro(request):
 	form = UserCreationForm(request.POST or None)
@@ -22,10 +31,4 @@ def cadastro(request):
 	}
 	return render(request, 'cadastro.html', contexto)
 
-def usuario(request):
-	lista = Produto.objects.all()
 
-	contexto = {
-	'lista_Produto': lista
-	}
-	return render(request, 'usuario.html', contexto)
