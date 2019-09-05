@@ -19,7 +19,7 @@ from django.contrib.auth import views as auth_views
 from core.views import paginainicial, cadastro, usuario
 
 urlpatterns = [
-	path(' ', paginainicial, name="paginainicial"),
+	path('', paginainicial, name="paginainicial"),
 	path('cadastro/', cadastro, name="cadastro"),
 	path('login/', auth_views.LoginView.as_view(), name="login"),
 	path('usuario/', usuario, name="usuario"),
