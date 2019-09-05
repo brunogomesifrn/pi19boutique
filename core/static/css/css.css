@@ -2,17 +2,8 @@ body{
 background-image: url(a.jpg);
 }
 
-.titulo
-{
-border-bottom: solid black 1px;
-	
-margin-bottom: 20px;
-	
-padding-top: 20px;
-	
-padding-bottom: 20px
-}
+.pagina {
 
-.gloss{
-	text-align:center;
+text-align: right;
+
 }
