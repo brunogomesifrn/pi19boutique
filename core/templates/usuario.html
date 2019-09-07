@@ -1,5 +1,8 @@
 {% extends 'paginainicial.html' %}
 {% load widget_tweaks %}
+{% load static %}
+
+
 
 {% block conteudo %}
 <link rel="stylesheet" type="text/css"
@@ -7,7 +10,35 @@ href="/static/css/estilo.css">
 <form method="post" class="form-signin">
 {% csrf_token %}
 
+<br/>
+<br/>
+<div class="row">
+<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"> 
+<p class="roupa"><img src="{% static 'imagens/sabrina.jpeg' %}" class="img-fluid img-thumbnail"  width="200px" height="250px"></p>
+<h3 class="roupa"> Conjuntinho - R$ 55,00 </h3>
+<!-- <p class="roupa"> </p> -->
 <p class="auten"><button class="btn-prog btn-lg btn-primary " type="submit">Comprar</button></p>
+</div>
+<br/>
+<br/>
+
+<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"> 
+<p class="roupa"><img src="{% static 'imagens/xadrez.jpeg' %}" class="img-fluid img-thumbnail"  width="200px" height="250px"></p>
+<h3 class="roupa"> Camisa Xadrez - R$ 15,00 </h3>
+<!-- <p class="roupa"> </p> -->
+<p class="auten"><button class="btn-prog btn-lg btn-primary " type="submit">Comprar</button></p>
+</div>
+<br/>
+<br/>
+
+<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"> 
+<p class="roupa"><img src="{% static 'imagens/vestido.jpeg' %}" class="img-fluid img-thumbnail"  width="200px" height="250px"></p>
+<h3 class="roupa"> Vestido - R$ 40,00 </h3>
+<!-- <p class="roupa"> </p> -->
+<p class="auten"><button class="btn-prog btn-lg btn-primary " type="submit">Comprar</button></p>
+</div>
+</div>
 
 {% endblock %}
 </form>
+
