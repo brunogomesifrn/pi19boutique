@@ -32,3 +32,4 @@ def cadastro(request):
 	return render(request, 'cadastro.html', contexto)
 
 
+

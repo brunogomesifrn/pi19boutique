@@ -30,22 +30,19 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="#"> Boutique da Luh </a>
-    <ul class="navbar-nav mr-auto mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="#"> Home <span class="sr-only">(Página atual)</span></a>
+    <a class="navbar-brand" href= "{% url 'paginainicial' %}"> Boutique da Luh </a>
+    <ul class="navbar-nav ml-auto mt-lg-0">
+ <!--     <li class="nav-item active">
+        <a class="nav-link" href="{% url 'paginainicial' %}"> Home <span class="sr-only">(Página atual)</span></a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'login' %}"> Login </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"> Login </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"> Cadastro </a>
+        <a class="nav-link" href="{% url 'cadastro' %}"> Cadastro </a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-    </form>
+    
   </div>
 </nav>
 

@@ -9,7 +9,11 @@ href="/static/css/estilo.css">
 <form method="post" class="form-signin">
 {% csrf_token %}
 
-<h4 class="h3 mb-3 font-weight-normal">Login</h4> <br/>
+<br/>
+<br/>
+<h4 class="h3 mb-3 font-weight-normal">Login</h4> 
+<br/>
+
 <label for="inputEmail" class="sr-only"></label> <p class="auten">Email</p> <p class="auten"> {{ form.username }}</p>
 
 <label for="inputPassword" class="sr-only"></label>
@@ -19,7 +23,7 @@ href="/static/css/estilo.css">
 
 <div class="checkbox mb-3">
 </div>
-<p class="auten"><a class="auten" href="{% url 'usuario' %}"> <button class="btn btn-lg btn-primary" type="submit">Entrar</button></a></p>
+<p class="auten"><a class="auten" href="{% url 'usuario' %}"> <button class="btn-prog btn-lg btn-primary" type="submit">Entrar</button></a></p>
 
 
 {% endblock %}
