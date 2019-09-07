@@ -1,10 +1,16 @@
+body{
+background-image: url(imagem1.jpg);
+}
 .auten {
 	text-align: center;
 	font-weight: bold;
 }
 nav{
-	color: purple;
+	color: purple !important;
 }
 h4{
 	text-align: center;
+}
+body{
+	padding: 0 !important;
 }
