@@ -1,3 +1,10 @@
 .auten {
-text-align: center;
+	text-align: center;
+	font-weight: bold;
+}
+nav{
+	color: purple;
+}
+h4{
+	text-align: center;
 }
