@@ -131,3 +131,7 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = 'usuario'
 
 LOGOUT_REDIRECT_URL = 'paginainicial'
+
+
+#Autenticação 
+AUTH_USER_MODEL = 'core.CustomUser'

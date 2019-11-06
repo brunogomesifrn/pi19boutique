@@ -1,4 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+
+class CustomUser(AbstractUser):
+	cpf = models.CharField ('CPF', max_length=11)
+
+	def __str__(self):
+		return self.email
 
 class Tipo(models.Model):
 	nome = models.CharField('Nome', max_length=100)
