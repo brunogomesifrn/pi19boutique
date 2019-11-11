@@ -7,7 +7,10 @@
 href="/static/css/estilo.css">
 
 <form method="post" class="form-signin">
-{% csrf_token %}
+	{% csrf_token %}
+	{{ form.as_p}}
+	<button type="submit">Autenticar</button>
+</form>
 
 <br/>
 <br/>
@@ -28,3 +31,4 @@ href="/static/css/estilo.css">
 
 {% endblock %}
 </form>
+

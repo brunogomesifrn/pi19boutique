@@ -1,0 +1,16 @@
+{% extends 'paginainicial.html' %}
+{% load widget_tweaks %}
+
+{% block conteudo %}
+
+<link rel="stylesheet" type="text/css"
+href="/static/css/estilo.css">
+
+<form method="post" class="form-signin">
+	{% csrf_token %}
+	{{ form.as_p}}
+	<button type="submit">Autenticar</button>
+</form>
+
+{% endblock %}
+</form>

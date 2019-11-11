@@ -6,30 +6,18 @@ from .forms import TipoForm, ProdutoForm
 
 
 
-def paginainicial(request):
-	return render( request, 'paginainicial.html')
-
-@login_required
+def index(request):
+	return render( request, 'index.html')
 
 def usuario(request):
-	lista = Produto.objects.all()
+	usuario = request.user
 
 	contexto = {
-	'lista_Produto': lista
+		'usuario': usuario,
 	}
 	return render(request, 'usuario.html', contexto)
 
-def cadastro(request):
-	form = UserCreationForm(request.POST or None)
 
-	if form.is_valid():
-		form.save()
-		return redirect('usuario')
-
-	contexto = {
-		'form': form
-	}
-	return render(request, 'cadastro.html', contexto)
 
 
 

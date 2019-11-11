@@ -8,6 +8,9 @@ class CustomUserCreationForm(UserCreationForm):
 	class Meta:
 		model = CustomUser
 		fields = ('username', 'email', 'cpf')
+		widgets = {
+			'cpf': forms.TextInput(attrs={'placeholder': 'Somente Números'})
+		}
 		
 
 class TipoForm(ModelForm):

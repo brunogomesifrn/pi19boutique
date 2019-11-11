@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'widget_tweaks',
     'django_cleanup',
     'core',
@@ -57,7 +61,7 @@ ROOT_URLCONF = 'pi19boutique.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,12 +130,33 @@ MEDIA_URL = '/foto/'
 
 MEDIA_ROOT = 'foto'
 
-LOGIN_URL = '/login/'
-
-LOGIN_REDIRECT_URL = 'usuario'
-
-LOGOUT_REDIRECT_URL = 'paginainicial'
-
-
 #Autenticação 
 AUTH_USER_MODEL = 'core.CustomUser'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+
+    )
+
+SITE_ID = 1
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME = True
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
+
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 60 * 5
+
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_UNIQUE_EMAIL = True
+
+ACCOUNT_FORMS = {
+    'signup': 'core.forms.CustomUserCreationForm',
+}
+
+LOGIN_REDIRECT_URL = 'usuario'
+ACCOUNT_LOGOUT_REDIRECT_URL = 'paginainicial'
+ACCOUNT_LOGOUT_ON_GET = True
