@@ -7,7 +7,7 @@ from .forms import TipoForm, ProdutoForm
 
 
 def index(request):
-	return render( request, 'index.html')
+	return render(request, 'index.html')
 
 def usuario(request):
 	usuario = request.user

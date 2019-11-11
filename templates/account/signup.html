@@ -1,4 +1,4 @@
-{% extends 'paginainicial.html' %}
+{% extends 'index.html' %}
 {% load widget_tweaks %}
 
 {% block conteudo %}
@@ -7,10 +7,10 @@
 href="/static/css/estilo.css">
 
 <form method="post" class="form-signin">
+<p class="h3 mb-3 font-weight-normal">Cadastre-se</p>
 	{% csrf_token %}
 	{{ form.as_p}}
-	<button type="submit">Autenticar</button>
+	<p class="auten"><a class="auten" href="{% url 'usuario' %}"> <button class="btn-prog btn-lg btn-primary" type="submit">Cadastrar</button></a></p>
 </form>
 
 {% endblock %}
-</form>
