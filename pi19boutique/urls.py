@@ -14,9 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
-from core.views import index, usuario
+from core.views import index, usuario, produto, produto_favoritar
 
 urlpatterns = [
     
@@ -24,5 +26,8 @@ urlpatterns = [
     path('', include('allauth.urls')),
 	path('index/', index, name='index'),
 	path('usuario/', usuario, name='usuario'),
-]
+    path('produto/', produto, name='produto'),
+    path('produto/<int:id>/favoritar/', produto_favoritar, name='produto_favoritar'),
+
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

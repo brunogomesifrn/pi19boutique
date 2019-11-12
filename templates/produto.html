@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+{% load widget_tweaks %}
+{% load static %}
+
+
+{% block conteudo %}
+
+<form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+          <div class="control-group form-group">
+            <div class="controls">
+              {{form.nome.label}}:{{form.nome|add_class:"form-control"}}
+              <p class="help-block"></p>
+            </div>
+          </div>
+
+          <div class="control-group form-group">
+            <div class="controls">
+              {{form.valor.label}}:{{form.valor|add_class:"form-control"}}
+              <p class="help-block"></p> 
+            </div>
+          </div>
+
+          <div class="control-group form-group">
+            <div class="controls">
+              {{form.descricao.label}}:{{form.descricao|add_class:"form-control"}}
+              <p class="help-block"></p> 
+            </div>
+          </div>
+
+          <div class="control-group form-group">
+            <div class="controls">
+              {{form.foto.label}}:{{form.foto|add_class:"form-control"}}
+                <p class="help-block"></p>
+            </div>
+          </div>
+
+
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Salvar</button></a></p>
+    </form>
+
+{% endblock %}

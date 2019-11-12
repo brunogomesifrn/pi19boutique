@@ -1,11 +1,9 @@
 {% extends 'index.html' %}
 {% load widget_tweaks %}
 {% load static %}
-{% load core_extras %}
-
-
 
 {% block conteudo %}
+
 <link rel="stylesheet" type="text/css"
 href="/static/css/estilo.css">
 
@@ -15,19 +13,15 @@ href="/static/css/estilo.css">
 	    	{{lista.nome}}
 	        {{lista.valor}}
 	        <img src="/foto/{{lista.foto}}" class="img-fluid" width="150px" height="150px">
-	        {% if lista|curtido:user %}
-	        	<button class="btn btn-primary" disabled>Curtido</button>
-	        {% else %}
-	        	<a href="{% url 'produto_favoritar' lista.id %}" class="btn btn-primary">Curtir</a>
-	        {% endif %}
+	        <p class="btn btn-primary">{{lista.curtidas}} curtidas</p>
 	        <!--<td>{{Tipo.nome}}</td>-->
         </div>
 	{% empty %}
     	Nenhum produto foi cadastrado
 	{% endfor %}
-</div>
 
+
+</div>
+<p><a href="{% url 'produto' %}">Cadastrar Produto</a></p>
 
 {% endblock %}
-
-

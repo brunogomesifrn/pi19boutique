@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Tipo, Produto
+from .models import Produto
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from .models import CustomUser 
@@ -11,12 +11,6 @@ class CustomUserCreationForm(UserCreationForm):
 		widgets = {
 			'cpf': forms.TextInput(attrs={'placeholder': 'Somente Números'})
 		}
-		
-
-class TipoForm(ModelForm):
-	class Meta():
-		model = Tipo
-		fields = ['nome']
 
 class ProdutoForm(ModelForm):
 	class Meta():
