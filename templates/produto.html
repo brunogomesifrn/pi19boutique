@@ -5,6 +5,7 @@
 
 {% block conteudo %}
 
+
 <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
 
@@ -18,13 +19,6 @@
           <div class="control-group form-group">
             <div class="controls">
               {{form.valor.label}}:{{form.valor|add_class:"form-control"}}
-              <p class="help-block"></p> 
-            </div>
-          </div>
-
-          <div class="control-group form-group">
-            <div class="controls">
-              {{form.descricao.label}}:{{form.descricao|add_class:"form-control"}}
               <p class="help-block"></p> 
             </div>
           </div>

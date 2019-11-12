@@ -20,8 +20,8 @@ href="/static/css/estilo.css">
 	        {% else %}
 	        	<a href="{% url 'produto_favoritar' lista.id %}" class="btn btn-primary">Curtir</a>
 	        {% endif %}
-	        <!--<td>{{Tipo.nome}}</td>-->
         </div>
+        
 	{% empty %}
     	Nenhum produto foi cadastrado
 	{% endfor %}
