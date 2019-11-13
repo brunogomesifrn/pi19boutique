@@ -1,5 +1,7 @@
 body{
 	background-image: url(imagem1.jpg);
+	background-color: #0a1737;
+	display: block;
 	padding: 0 !important;
 }
 .auten {
