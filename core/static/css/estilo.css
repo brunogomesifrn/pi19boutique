@@ -1,16 +1,18 @@
-body{
-	background-image: url(imagem1.jpg);
-	background-color: #0a1737;
+.temp{
+	font-weight: bold;
+	font-size: 18px;
+}
+.b{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)), url(imagem1.jpg);
+	background-color: white;
 	display: block;
 	padding: 0 !important;
+	
 }
 .auten {
 	text-align: center;
 	font-weight: bold;
 	text-decoration: purple;
-}
-.nav-link{
-	color: white !important;
 }
 nav.bg-dark{
 	background: purple !important;
@@ -28,4 +30,8 @@ p{
 }
 .roupa{
 	text-align: center
+}
+btn btn-primary{
+	color: purple !important;
+	background: purple !important;
 }
