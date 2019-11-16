@@ -43,3 +43,8 @@ def produto_favoritar(request, id):
 	)
 	return redirect('usuario')
 
+def excluir(request, id):
+	lista = Produto.objects.get(pk=id)
+	lista.delete()
+	
+	return redirect('info')

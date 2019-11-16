@@ -10,22 +10,25 @@
 href="/static/css/estilo.css">
 
 <div class="row">
+	<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center"> 
 	{% for lista in lista_Produto %}
-		<div class="col-2 text-center"> 
-	    	{{lista.nome}}
+	        <img src="/foto/{{lista.foto}}" class="img-fluid rounded img-thumbnail" width="200px" height="200px">
+	    </br>
+	        {{lista.nome}}
+	    </br>
 	        {{lista.valor}}
-	        <img src="/foto/{{lista.foto}}" class="img-fluid" width="150px" height="150px">
+	    </br> 
 	        {% if lista|curtido:user %}
 	        	<button class="btn btn-primary" disabled>Curtido</button>
 	        {% else %}
 	        	<a href="{% url 'produto_favoritar' lista.id %}" class="btn btn-primary">Curtir</a>
 	        {% endif %}
         </div>
+    </div>
         
 	{% empty %}
     	Nenhum produto foi cadastrado
 	{% endfor %}
-</div>
 
 
 {% endblock %}
