@@ -7,8 +7,8 @@
 <link rel="stylesheet" type="text/css"
 href="/static/css/estilo.css">
 
-<div class="container-fluid">    
-  <div class="row">
+<div class="container-fluid">
+    <div class="row">
       <div class="col-lg-12 mb-12">
           <p class="h3 mb-3 font-weight-normal gern">Gerenciamento de Produtos</p>
         </div>
@@ -40,8 +40,6 @@ href="/static/css/estilo.css">
                     <th>
                       <a href="{% url 'excluir' lista.id %}"><button type="button" class="btn btn-danger">Excluir</button></a>
                   </th>
-
-
                 </tr>
                 {% empty %}
                 Nenhum produto foi cadastrado
@@ -53,12 +51,10 @@ href="/static/css/estilo.css">
 <br/>
 <br/>
 
-  </div>
-
- <nav class="navbar fixed-bottom navbar-light bg-light">
+<nav class="navbar fixed-bottom navbar-light bg-light">
   <p class="centro">Deixe Seu Estilo Florescer!</p>
   <p class="ender">Rua Dom Nivaldo Monte, 09, Centro, Goianinha/Rn.</p>
 </nav>
 
-
+</div>
 {% endblock %}
