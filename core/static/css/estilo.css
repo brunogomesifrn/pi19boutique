@@ -23,7 +23,7 @@
 }
 nav.bg-dark{
 	background: purple !important;
-	margin-bottom: 20px;
+	margin-bottom: 35px;
 }
 h4{
 	text-align: center;
@@ -53,6 +53,9 @@ nav.bg-light{
 }
 .gern{
 	color: purple;
+	font-size: 30px;
+	font-family: Times New Roman;
+	font-weight: bolder;
 }
 .ender, .centro{
 	color: white;
