@@ -7,13 +7,21 @@
 <link rel="stylesheet" type="text/css"
 href="/static/css/estilo.css">
 
-  <p class="h3 mb-3 font-weight-normal">Gerenciamento de Produtos</p>
-
-    <div class="row">
+<div class="container-fluid">    
+  <div class="row">
       <div class="col-lg-12 mb-12">
+          <p class="h3 mb-3 font-weight-normal gern">Gerenciamento de Produtos</p>
+        </div>
+      </div>
 
-  <table class="table">
-              <thead class="thead-light">
+  <div class="row">
+    <div class="col-lg-12 mb-12">
+        <p><a href="{% url 'produto' %}"><button type="button" class="btn btn-danger">Cadastrar Produto</button></a> </p>
+      </div>
+  </div>
+
+  <table class="table table-light table-striped">
+              <thead class="thead-dark">
                 <tr>
                   <th scope="col">Produto</th>
                   <th scope="col">Valor</th>
@@ -21,17 +29,17 @@ href="/static/css/estilo.css">
                   <th scope="col">Foto</th>
                   <th scope="col">Gerenciar</th>
                 </tr>
-              </thead>S
+              </thead>
               <tbody>
                 {% for lista in lista_Produto %}
                 <tr>
                   <th scope="row">{{lista.nome}}</th>
-                    <td>{{lista.valor}}</td>
-                    <td>{{lista.curtidas}}</td>
-                    <td><img src="/foto/{{lista.foto}}" class="img-fluid rounded img-thumbnail" width="100px" height="100px"></td>
-                    <td>
+                    <th>{{lista.valor}}</th>
+                    <th>{{lista.curtidas}}</th>
+                    <th><img src="/foto/{{lista.foto}}" class="img-fluid rounded img-thumbnail" width="100px" height="100px"></th>
+                    <th>
                       <a href="{% url 'excluir' lista.id %}"><button type="button" class="btn btn-danger">Excluir</button></a>
-                  </td>
+                  </th>
 
 
                 </tr>
@@ -42,6 +50,15 @@ href="/static/css/estilo.css">
               </tbody>
     </table>
 
-<p><a href="{% url 'produto' %}">Cadastrar Produto</a></p>
+<br/>
+<br/>
+
+  </div>
+
+ <nav class="navbar fixed-bottom navbar-light bg-light">
+  <p class="centro">Deixe Seu Estilo Florescer!</p>
+  <p class="ender">Rua Dom Nivaldo Monte, 09, Centro, Goianinha/Rn.</p>
+</nav>
+
 
 {% endblock %}
