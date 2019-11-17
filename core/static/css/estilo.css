@@ -9,6 +9,11 @@
 	padding: 0 !important;
 	
 }
+.bout{
+	font-family: Garamond;
+	font-size: 80px;
+	color: black;
+}
 .auten {
 	text-align: center;
 	font-weight: bold;
@@ -38,4 +43,7 @@ btn btn-primary{
 .list{
 	color: black;
 	font-family: Times New Roman;
+}
+h1{
+	text-align: center;
 }

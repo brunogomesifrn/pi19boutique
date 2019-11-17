@@ -47,4 +47,4 @@ def excluir(request, id):
 	lista = Produto.objects.get(pk=id)
 	lista.delete()
 	
-	return redirect('info')
+	return redirect('usuario')
