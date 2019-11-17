@@ -11,32 +11,27 @@ href="/static/css/estilo.css">
 
 <div class="container-fluid">
 	<div class="row">
+		{% for lista in lista_Produto %}
 		<div class="col-lg-3">
+	        <img src="/foto/{{lista.foto}}" class="img-fluid img-thumbnail" width="200px" height="200px">
+        
+</div>
 
-	{% for lista in lista_Produto %}
-	        <img src="/foto/{{lista.foto}}" class="img-fluid rounded img-thumbnail" width="200px" height="200px">
-	    <br/>
-	        {{lista.nome}}
-	    <br/>
-	        {{lista.valor}} 
-	        {% if lista|curtido:user %}
+<div class="col-lg-3"> <p> {{lista.nome}} </p></div>
+<div class="col-lg-3"> <p> {{lista.valor}} </p></div>
+<div class="col-lg-3"><p> {% if lista|curtido:user %}
 	        	<button class="btn btn-primary" disabled>Curtido</button>
 	        {% else %}
 	        	<a href="{% url 'produto_favoritar' lista.id %}" class="btn btn-primary">Curtir</a>
-	        {% endif %}
-        
-	{% empty %}
+	        {% endif %} </p>
+</div>
+</div>
+
+{% empty %}
     	Nenhum produto foi cadastrado
 	{% endfor %}
-</div>
-</div>
 
-<br/>
-<br/>
-<br/>
-<br/>
-
-<nav class="navbar fixed-bottom navbar-light bg-light">
+ <nav class="navbar fixed-bottom navbar-light bg-light">
   <p class="centro">Deixe Seu Estilo Florescer!</p>
   <p class="ender">Rua Dom Nivaldo Monte, 09, Centro, Goianinha/Rn.</p>
 </nav>

@@ -3,10 +3,11 @@
 	font-size: 18px;
 }
 .canto{
-	border-radius: 15px
+	border-radius: 45px;
 }
 .b{
-	background-image: linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)), url(imagem1.jpg);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)), url(image2.jpg);
+	background-size: cover;
 	background-color: white;
 	display: block;
 	padding: 0 !important;
@@ -53,9 +54,8 @@ nav.bg-light{
 }
 .gern{
 	color: purple;
-	font-size: 30px;
+	font-size: 40px;
 	font-family: Times New Roman;
-	font-weight: bolder;
 }
 .ender, .centro{
 	color: white;
