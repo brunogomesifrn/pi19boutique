@@ -6,7 +6,7 @@
 	border-radius: 15px
 }
 .b{
-	background-image: linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)), border-radius:15px, url(imagem1.jpg);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)), url(imagem1.jpg);
 	background-color: white;
 	display: block;
 	padding: 0 !important;
@@ -24,6 +24,7 @@
 }
 nav.bg-dark{
 	background: purple !important;
+	margin-bottom: 20px;
 }
 h4{
 	text-align: center;
@@ -33,7 +34,7 @@ p{
 	text-align: center;
 	font-weight: bolder;
 }
-.btn-prog{
+.btn-prog, .btn-danger{
 	background: purple !important;
 }
 .roupa{
@@ -45,8 +46,22 @@ btn btn-primary{
 }
 .list{
 	color: black;
-	font-family: Times New Roman;
 }
-h1{
+.centro{
+	color: white;
+	font-size: 25px;
 	text-align: center;
+}
+nav.bg-light{
+	background: purple !important;
+	max-height: 55px;
+	text-align: center;
+	margin-top: 50px;
+}
+.gern{
+	color: purple;
+}
+.ender{
+	color: white;
+	font-size: 15px;
 }
