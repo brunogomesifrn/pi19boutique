@@ -40,8 +40,9 @@ p{
 .roupa{
 	text-align: center
 }
-.btn btn-primary{
-	color: purple !important;
+.btn, .btn-primary{
+	text-align: center;
+	color: white !important;
 	background: purple !important;
 }
 .list{
@@ -64,6 +65,7 @@ nav.bg-light{
 }
 .int{
 	font-size: 18px;
+	font-family: calibri;
 	text-align: center;
 
 }

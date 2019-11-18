@@ -10,30 +10,27 @@
 		<div class="row">
 		{% for lista in lista_Produto %}
 		<div class="col-lg-3">
-	       <p> <img src="/foto/{{lista.foto}}" class="img-fluid img-thumbnail" width="200px" height="200px"></p>
-        
-
-
-<div class="col-lg-3"> <p class="int"> {{lista.nome}} </p>
-<div class="col-lg-3"> <p class="int"> {{lista.valor}} </p>
-<div class="col-lg-3"> <p class="int"> {% if lista|curtido:user %}
+	       <p class="int"> <img src="/foto/{{lista.foto}}" class="img-fluid img-thumbnail" width="200px" height="200px"></p>
+			<p class="int"> {{lista.nome}} </p>
+			<p class="int"> {{lista.valor}} </p>
+			<p class="int"> {% if lista|curtido:user %}
 	        	<button class="btn btn-primary" disabled>Curtido</button>
 	        {% else %}
 	        	<a href="{% url 'produto_favoritar' lista.id %}" class="btn btn-primary">Curtir</a>
 	        {% endif %} </p>
-
-
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
+        </div>
 
 {% empty %}
     	Nenhum produto foi cadastrado
 	{% endfor %}
+</div>
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
 
  <nav class="navbar fixed-bottom navbar-light bg-light">
   <p class="centro">Deixe Seu Estilo Florescer!</p>

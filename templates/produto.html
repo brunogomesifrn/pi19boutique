@@ -4,16 +4,17 @@
 
 
 {% block conteudo %}
+<link rel="stylesheet" type="text/css"
+href="{% static 'css/estilo.css' %}">
 
 <div class="container-fluid">
 
-<form method="POST" enctype="multipart/form-data">
+<form  method="POST" enctype="multipart/form-data">
         {% csrf_token %}
 
           <div class="control-group form-group">
             <div class="controls">
-              {{form.nome.label}}:{{form.nome|add_class:"form-control"}}
-              <p class="help-block"></p>
+           {{form.nome.label}}:{{form.nome|add_class:"form-control"}} 
             </div>
           </div>
 
