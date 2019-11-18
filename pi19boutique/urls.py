@@ -18,7 +18,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
-from core.views import index, usuario, produto, produto_favoritar, excluir
+from core.views import index, usuario, produto, produto_favoritar, editar, excluir
 
 urlpatterns = [
     
@@ -28,6 +28,7 @@ urlpatterns = [
 	path('usuario/', usuario, name='usuario'),
     path('produto/', produto, name='produto'),
     path('produto/<int:id>/favoritar/', produto_favoritar, name='produto_favoritar'),
+    path('editar/<int:id>/', editar, name="editar"),
     path('excluir/<int:id>/', excluir, name="excluir"),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

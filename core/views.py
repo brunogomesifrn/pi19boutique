@@ -15,7 +15,8 @@ def usuario(request):
 	lista = Produto.objects.all()
 
 	contexto = {
-	'lista_Produto': lista
+	'lista_Produto': lista,
+		'usuario': usuario
 	}
 	if usuario.is_staff:
 		return render(request, 'info.html', contexto)
@@ -42,6 +43,20 @@ def produto_favoritar(request, id):
 		usuario=request.user
 	)
 	return redirect('usuario')
+
+def editar(request, id):
+	lista = Produto.objects.get(pk=id)
+	form = ProdutoForm(request.POST or None, request.FILES or None, instance=lista)
+
+	if form.is_valid():
+		form.save()
+		return redirect('usuario')
+
+	contexto = {
+	'form': form
+	}
+
+	return render(request, 'produto.html', contexto)
 
 def excluir(request, id):
 	lista = Produto.objects.get(pk=id)

@@ -4,38 +4,53 @@
 {% load core_extras %}
 
 {% block conteudo %}
+
 <link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
 
-<div class="container-fluid">
-		<div class="row">
-		{% for lista in lista_Produto %}
-		<div class="col-lg-3">
-	       <p class="int"> <img src="/foto/{{lista.foto}}" class="img-fluid img-thumbnail" width="200px" height="200px"></p>
-			<p class="int"> {{lista.nome}} </p>
-			<p class="int"> {{lista.valor}} </p>
-			<p class="int"> {% if lista|curtido:user %}
-	        	<button class="btn btn-primary" disabled>Curtido</button>
-	        {% else %}
-	        	<a href="{% url 'produto_favoritar' lista.id %}" class="btn btn-primary">Curtir</a>
-	        {% endif %} </p>
-        </div>
+<div class="container-fluid bor">
+	<div class="row"> 
+		<div class="col-6">
+			<p class="font-weight-bolder"> {{usuario.username}}</p> 
+		</div>
 
-{% empty %}
-    	Nenhum produto foi cadastrado
-	{% endfor %}
+		<div class="col-6">
+			<p class="font-weight-bolder">{{usuario.email}}</p>
+		</div>
+
+	</div>
 </div>
 
+<div class="container-fluid">
+
+	<div class="row">
+		{% for lista in lista_Produto %}
+		<div class="col-lg-3">
+			<p class="int"> <img src="/foto/{{lista.foto}}" class="img-fluid rounded-circle img-thumbnail img"></p>
+			<p class="int"> {{lista.nome}} <br/>
+			{{lista.valor}} </p>
+			<p class="int"> {% if lista|curtido:user %}
+				<button class="btn btn-primary" disabled>Curtido</button>
+				{% else %}
+				<a href="{% url 'produto_favoritar' lista.id %}" class="btn btn-primary">Curtir</a>
+			{% endif %} </p>
+		</div>
+
+		{% empty %}
+		<p class="bouti"> Nenhum produto foi cadastrado </p>
+		{% endfor %}
+	</div>
 
 
-<br/>
-<br/>
-<br/>
-<br/>
 
- <nav class="navbar fixed-bottom navbar-light bg-light">
-  <p class="centro">Deixe Seu Estilo Florescer!</p>
-  <p class="ender">Rua Dom Nivaldo Monte, 09, Centro, Goianinha/Rn.</p>
-</nav>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+
+	<nav class="navbar fixed-bottom navbar-light bg-light">
+		<p class="centro">Deixe Seu Estilo Florescer!</p>
+		<p class="ender">Rua Dom Nivaldo Monte, 09, Centro, Goianinha/Rn.</p>
+	</nav>
 
 </div>
 {% endblock %}
