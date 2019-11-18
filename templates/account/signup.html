@@ -7,10 +7,27 @@
 href="/static/css/estilo.css">
 
 <form method="post" class="form-signin">
-<p class="h3 mb-3 font-weight-normal">Cadastre-se</p>
+<p class="h3 mb-3 font-weight-bolder gern">Cadastre-se</p>
 	{% csrf_token %}
-	{{ form.as_p}}
-	<p class="auten"><a class="auten" href="{% url 'usuario' %}"> <button class="btn-prog btn-lg btn-primary" type="submit">Cadastrar</button></a></p>
+
+  	<label  for="Inputusername"  class = "sr-only" > Usuário </label> <p  class = " auten "> Usuário </p> <p  class = " auten " > {{form.username}} </p>
+  	<label  for = "InputEmail"  class = " sr-only " > Email </label> <p  class = "auten" > Email </p> <p class = "auten"> {{form.email}} </p>
+	<label  for = "Inputcpf"  class = " sr-only " >  </label> CPF <p  class = "auten" > CPF </p> <p class = "auten"> {{form.cpf}} </p>
+  	<label  for="inputPassword"  class = "sr-only" > Senha </label> <p  class = " auten "> Senha </p> <p  class = " auten " > {{form.password1}} </p>
+  	<label  for = " inputPassword "  class = " sr-only " > Repetir uma senha: </label> <p  class = "auten" > Repetir uma senha: </p> <p class = "auten"> {{form.password2}} </p>
+
+<p class="auten"><a class="auten" href="{% url 'usuario' %}"> <button class="btn-prog btn-lg btn-primary" type="submit">Cadastrar</button></a></p>
+
 </form>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<nav class="navbar fixed-bottom navbar-light bg-light">
+  <p class="centro">Deixe Seu Estilo Florescer!</p>
+  <p class="ender">Rua Dom Nivaldo Monte, 09, Centro, Goianinha/Rn.</p>
+</nav>
 
 {% endblock %}

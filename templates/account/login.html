@@ -6,20 +6,24 @@
 <link rel="stylesheet" type="text/css"
 href="/static/css/estilo.css">
 
+
 <form method="post" class="form-signin">
 <br/>
 <br/>
 	{% csrf_token %}
 
 <label for="inputPassword" class="sr-only"></label>
-<h4 class="h3 mb-3 font-weight-normal"> Login </h4> <p class="u"> {{ form.as_p }} </p>
+<h4 class="h3 mb-3 font-weight-bolder gern"> Login </h4> <p class="u"> {{ form.as_p }} </p>
 
 <br/>
 
-<div class="checkbox mb-3">
-</div>
 <p class="auten"><a class="auten" href="{% url 'usuario' %}"> <button class="btn-prog btn-lg btn-primary" type="submit">Entrar</button></a></p>
 </form>
+
+<nav class="navbar fixed-bottom navbar-light bg-light">
+  <p class="centro">Deixe Seu Estilo Florescer!</p>
+  <p class="ender">Rua Dom Nivaldo Monte, 09, Centro, Goianinha/Rn.</p>
+</nav>
 
 {% endblock %}
 
